@@ -2,6 +2,9 @@ package com.crud.crud_use_spring_boot;
 
 import org.springframework.web.bind.annotation.*;
 
+// @CrossOrigin(origins = "http://localhost:5500")
+// @CrossOrigin(origins = '*')
+@CrossOrigin
 @RestController
 public class NoteController {
 
@@ -11,6 +14,8 @@ public class NoteController {
     noteRepositoryInterface = repository;
   }
 
+  // @CrossOrigin(origins = "http://localhost:5500")
+  // @CrossOrigin(origins = "*")
   @GetMapping("/notes")
   Iterable<Note> getNotes() {
     return noteRepositoryInterface.findAll();
